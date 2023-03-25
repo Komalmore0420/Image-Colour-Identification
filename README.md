@@ -6,6 +6,7 @@ Image color identification with Machine Learning and Image Processing, using Pyt
 
 1. The image
 The first step is to get an image. I’ve used this one:
+
 ![nature](https://user-images.githubusercontent.com/120296734/227698223-6c74f04e-4da8-42fa-b93a-4ec71f8c7600.jpg)
 
 
@@ -37,6 +38,8 @@ So we have our colors. The difficult part is that while we can see them and iden
 So if we want to automatically detect the color of the sky and associate it to one of the color in the pie chart, we need to be a little more creative.
 
 The main idea is pretty basic. In fact, the image is RGB encoded. That means that if we compute the difference between the image and the rgb expression of one of the 10 colors, we get [0,0,0] exactly when the image is equal to the color.
+
+![zeros](https://user-images.githubusercontent.com/120296734/227699900-401499d8-3a7c-4e21-9d08-769d5c86bf26.png)
 
 
 
