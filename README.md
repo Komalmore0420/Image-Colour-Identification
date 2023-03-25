@@ -6,6 +6,7 @@ Image color identification with Machine Learning and Image Processing, using Pyt
 
 1. The image
 The first step is to get an image. I’ve used this one:
+![nature](https://user-images.githubusercontent.com/120296734/227698223-6c74f04e-4da8-42fa-b93a-4ec71f8c7600.jpg)
 
 
 2. The libraries
