@@ -42,6 +42,8 @@ Then, if we want to identify the colors of the image, the idea is to break this 
 Of course, the squares are not monochromatic. This means that each square will have multiple colors. Nonetheless, the average distance between the image is the indicator that we need: we pick the color that, in average, is closer to 0 than the others. In particular, we do that by using this function:
 
 
+With this function, we can plot the “best color” for each square.
+![MergedImages](https://user-images.githubusercontent.com/120296734/227699183-98d43101-8366-49ba-8ec5-856cbf9ea433.png)
 
 
 4. The final result
