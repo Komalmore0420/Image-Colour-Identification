@@ -19,7 +19,10 @@ Now, the main idea is that it is possible to use the image as a (N_rows X N_colu
 This is super interesting for several reasons. The first one is that it does not require any specific training on a huge set of images. The second one is that you can increase the number of clusters (and, thus, the number of colors), choosing a smaller or higher amount of tones.
 In order to do that, you will need these functions:  [1]  get_image   [2] RGB2HEX
 
-Once it is done, you will have your 10 colors (I have chosen them to be 10 by setting “number_of_colors=10”)
+Once it is done, you will have your 10 colors (I have chosen them to be 10 by setting “number_of_colors=10”) and output will be follow : 
+
+![ml-colour detection](https://user-images.githubusercontent.com/120296734/227699633-f8a9cd84-698e-4903-84ed-d40c42eee314.png)
+
 
  
 
@@ -35,14 +38,14 @@ So if we want to automatically detect the color of the sky and associate it to o
 
 The main idea is pretty basic. In fact, the image is RGB encoded. That means that if we compute the difference between the image and the rgb expression of one of the 10 colors, we get [0,0,0] exactly when the image is equal to the color.
 
-Let me tell you, this is not orthodox. In fact, you will have negative pixels. But it works, and if it works, don’t touch it :)
+
 
 The first step is technical, and it is based on converting the RGB in integer values.
 
-Then, if we want to identify the colors of the image, the idea is to break this image into smaller squares. In this case, I’ve chosen the dimension of each square to be N_rows/10 X N_columns/10, thus obtaining 100 squares. These squares are obtained by using the following function.
+Then, if we want to identify the colors of the image, the idea is to break this image into smaller squares. In this case, I’ve chosen the dimension of each square to be N_rows/10 X N_columns/10, thus obtaining 100 squares. These squares are obtained by using the square_maker function.
 
 
-Of course, the squares are not monochromatic. This means that each square will have multiple colors. Nonetheless, the average distance between the image is the indicator that we need: we pick the color that, in average, is closer to 0 than the others. In particular, we do that by using this function:
+Of course, the squares are not monochromatic. This means that each square will have multiple colors. Nonetheless, the average distance between the image is the indicator that we need: we pick the color that, in average, is closer to 0 than the others. In particular, we do that by using color_computing function:
 
 
 With this function, we can plot the “best color” for each square.
